@@ -1,20 +1,21 @@
-pragma solidity ^0.4.19;
-contract HelloEthereum{
+pragma solidity ^0.4.15;
+
+contract HelloEthereum {
     string public msg1;
     string private msg2;
     address public owner;
     uint8 public counter;
 
-    function HelloEthereum(string _msg1) public{
+    function HelloEthereum(string _msg1) public {
         msg1 = _msg1;
         owner = msg.sender;
         counter = 0;
     }
 
-    function setMsg2(string _msg2) public{
-        if(owner != msg.sender){
+    function setMsg2(string _msg2) public {
+        if ( owner != msg.sender ) {
             revert();
-        }else{
+        }else {
             msg2 = _msg2;
         }
     }
@@ -23,8 +24,8 @@ contract HelloEthereum{
         return msg2;
     }
 
-    function setCounter() public{
-        for(uint8 i = 0; i< 3; i++){
+    function setCounter() public {
+        for (uint8 i = 0; i < 3; i++) {
             counter++;
         }
     }
